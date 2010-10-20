@@ -1,10 +1,11 @@
 import Qt 4.7
+import "components"
 
 Rectangle {
     width: 200
     height: 323
-    Text {
-        text: "Hello World"
+    Button {
+        text: "moro"
         anchors.centerIn: parent
     }
 }
