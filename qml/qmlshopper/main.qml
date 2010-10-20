@@ -12,11 +12,24 @@ Window {
         y: mainwindow.headerBottom + 10
         anchors.left: parent.left; anchors.right: parent.right
         anchors.margins: 10
+        onEnterPressed: itemmodel.model += 1
     }
 
-    Button {
-        id: somebutton
-        text: "moro"
-        anchors.centerIn: parent
+    ScrollView {
+        id: items
+        anchors.top: wanted_entry.bottom
+        anchors.bottom: parent.bottom
+        anchors.left: parent.left
+        anchors.right: parent.right
+        anchors.margins:  10
+        Column {
+            Repeater {
+                id: itemmodel
+                model: 3
+                Text {
+                    text: "foo" + index
+                }
+            }
+        }
     }
 }
