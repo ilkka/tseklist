@@ -1,5 +1,5 @@
 import Qt 4.7
-import "components"
+import Qt.labs.Mx 1.0
 
 Rectangle {
     width: 200
