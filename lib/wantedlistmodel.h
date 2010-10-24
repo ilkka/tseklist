@@ -8,9 +8,11 @@ class WantedListModel : public QAbstractListModel
     Q_OBJECT
 public:
     explicit WantedListModel(QObject *parent = 0);
-    int rowCount(const QModelIndex &parent) const;
-    QVariant data(const QModelIndex &index, int role) const;
-    QVariant headerData(int section, Qt::Orientation orientation, int role) const;
+    virtual ~WantedListModel();
+    int rowCount(const QModelIndex &parent = QModelIndex()) const;
+    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const;
+    QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const;
+    QModelIndex parent(const QModelIndex &child) const;
 
 signals:
 
