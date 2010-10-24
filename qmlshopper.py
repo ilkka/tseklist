@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-import sys, oa
+import sys, os
 from PySide import QtGui, QtCore, QtDeclarative
 
 # Enums are copyright 2005 Zoran Isailovski
@@ -57,16 +57,17 @@ def Enum(*names):
 #    print 'Your answer is not', ~answer
 
 class QmlApplicationViewer(QtDeclarative.QDeclarativeView):
-    Orientation = Enum('LockPortrait LockLandscape Auto')
+    Orientation = Enum('LockPortrait', 'LockLandscape', 'Auto')
 
     def __init__(self, parent=None):
         QtDeclarative.QDeclarativeView.__init__(self)
         QtCore.QObject.connect(self.engine(), QtCore.SIGNAL('quit()'), self, QtCore.SLOT('close()'))
-        setResizeMode(QtDeclarative.QDeclarativeView.SizeRootObjectToView)
+        self.setResizeMode(QtDeclarative.QDeclarativeView.SizeRootObjectToView)
         self.mainQmlFile = ""
 
     def setMainQmlFile(self, filename):
         self.mainQmlFile = QmlApplicationViewer._adjustPath(filename)
+        self.setSource(QtCore.QUrl.fromLocalFile(self.mainQmlFile))
 
     def addImportPath(self,  path):
         pass
@@ -74,15 +75,18 @@ class QmlApplicationViewer(QtDeclarative.QDeclarativeView):
     def setOrientation(self, orientation):
         pass
 
-    def _adjustPath(path):
+    @classmethod
+    def _adjustPath(cls, path):
         if not QtCore.QDir.isAbsolutePath(path):
             return os.path.join(QtCore.QCoreApplication.applicationDirPath(), "/../Resources/", path)
 
 if __name__ == "__main__":
     app = QtGui.QApplication(sys.argv)
-    view = QtDeclarative.QDeclarativeView()
-    view.setSource(QtCore.QUrl('qml/qmlshopper/main.qml'))
-    view.setResizeMode(QtDeclarative.QDeclarativeView.SizeRootObjectToView)
+    #view = QtDeclarative.QDeclarativeView()
+    #view.setSource(QtCore.QUrl('qml/qmlshopper/main.qml'))
+    #view.setResizeMode(QtDeclarative.QDeclarativeView.SizeRootObjectToView)
+    view = QmlApplicationViewer()
+    view.setMainQmlFile('qml/qmlshopper/main.qml')
     
     view.show()
     sys.exit(app.exec_())
