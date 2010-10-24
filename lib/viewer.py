@@ -22,7 +22,17 @@ class QmlApplicationViewer(QtDeclarative.QDeclarativeView):
         self.engine().addImportPath(QmlApplicationViewer._adjustPath(path))
 
     def setOrientation(self, orientation):
-        pass
+        try:
+            from PySide import QtMaemo5
+            if orientation == Orientation.LockPortrait:
+                attr = QtMaemo5.Qt.WA_Maemo5PortraitOrientation
+            elif orientation == Orientation.LockLandscape:
+                attr = QtMaemo5.Qt.WA_Maemo5LandscapeOrientation
+            else:
+                attr = QtMaemo5.Qt.WA_Maemo5AutoOrientation
+            self.setAttribute(attr, True)
+        except ImportError:
+            pass # We're not on Maemo 5
 
     @classmethod
     def _adjustPath(cls, path):
