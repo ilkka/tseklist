@@ -5,7 +5,7 @@ WantedListModel::WantedListModel(QObject *parent) :
 {
 }
 
-int WantedListModel::rowCount(const QModelIndex &parent) const
+int WantedListModel::rowCount(const QModelIndex &/*parent*/) const
 {
     return 5;
 }
@@ -18,7 +18,7 @@ QVariant WantedListModel::data(const QModelIndex &index, int role) const
     return QVariant();
 }
 
-QVariant WantedListModel::headerData(int section, Qt::Orientation orientation, int role) const
+QVariant WantedListModel::headerData(int /*section*/, Qt::Orientation /*orientation*/, int role) const
 {
     if (index.isValid() && role == Qt::DisplayRole) {
         return QVariant("Terppa");
