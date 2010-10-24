@@ -24,14 +24,10 @@ Window {
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.margins:  10
-        Column {
-            Repeater {
-                id: itemmodel
-                model: 3
-                Text {
-                    text: "foo" + index
-                }
-            }
+        ListView {
+                 anchors.fill: parent
+                 model: wantedlist
+                 delegate: Text { text: "Foo " + index }
         }
     }
 }

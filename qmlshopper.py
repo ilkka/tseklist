@@ -28,9 +28,11 @@ class WantedListModel(QtCore.QAbstractListModel):
 if __name__ == "__main__":
     app = QtGui.QApplication(sys.argv)
     view = QmlApplicationViewer()
-    view.setMainQmlFile('qml/qmlshopper/main.qml')
 
     model = WantedListModel()
+    view.rootContext().setContextProperty("wantedlist", model)
+
+    view.setMainQmlFile('qml/qmlshopper/main.qml')
 
     root = view.rootObject()
     QtCore.QObject.connect(root, QtCore.SIGNAL('addThing(QString)'),
