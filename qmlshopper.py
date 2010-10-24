@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import sys, os
 from PySide import QtGui, QtCore, QtDeclarative
+from enum import Enum
 
 class QmlApplicationViewer(QtDeclarative.QDeclarativeView):
     Orientation = Enum('LockPortrait', 'LockLandscape', 'Auto')
