@@ -19,7 +19,7 @@ class QmlApplicationViewer(QtDeclarative.QDeclarativeView):
         self.setSource(QtCore.QUrl.fromLocalFile(self.mainQmlFile))
 
     def addImportPath(self,  path):
-        pass
+        self.engine().addImportPath(QmlApplicationViewer._adjustPath(path))
 
     def setOrientation(self, orientation):
         pass
