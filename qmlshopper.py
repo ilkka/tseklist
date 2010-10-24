@@ -63,14 +63,15 @@ class QmlApplicationViewer(QtDeclarative.QDeclarativeView):
         QtDeclarative.QDeclarativeView.__init__(self)
         QtCore.QObject.connect(self.engine(), QtCore.SIGNAL('quit()'), self, QtCore.SLOT('close()'))
         setResizeMode(QtDeclarative.QDeclarativeView.SizeRootObjectToView)
+        self.mainQmlFile = ""
 
-    def setMainQmlFile(filename):
+    def setMainQmlFile(self, filename):
+        self.main
+
+    def addImportPath(self,  path):
         pass
 
-    def addImportPath(path):
-        pass
-
-    def setOrientation(orientation):
+    def setOrientation(self, orientation):
         pass
 
 if __name__ == "__main__":
