@@ -18,8 +18,9 @@ class WantedListModel(QtCore.QAbstractListModel):
         elif role == QtCore.Qt.BackgroundRole:
             return QVariant()
     
-    @QtCore.Slot
+    @QtCore.Slot()
     def addThing(self, thing):
+        print("Add thing: %s" % (thing))
         self.beginInsertRows(QtCore.QModelIndex(), len(self._things), len(self._things))
         self._things.append(thing)
         self.endInsertRows()
@@ -28,6 +29,12 @@ if __name__ == "__main__":
     app = QtGui.QApplication(sys.argv)
     view = QmlApplicationViewer()
     view.setMainQmlFile('qml/qmlshopper/main.qml')
-    
+
+    model = WantedListModel()
+
+    root = view.rootObject()
+    QtCore.QObject.connect(root, QtCore.SIGNAL('addThing(QString)'),
+                           model, QtCore.SLOT('addThing(QString)'))
+
     view.show()
     sys.exit(app.exec_())

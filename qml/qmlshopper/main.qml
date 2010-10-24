@@ -6,13 +6,15 @@ Window {
     width: 200
     height: 323
 
+    signal addThing(string thing)
+
     Entry {
         id: wanted_entry
         hint: "New item"
         y: mainwindow.headerBottom + 10
         anchors.left: parent.left; anchors.right: parent.right
         anchors.margins: 10
-        onEnterPressed: itemmodel.model += 1
+        onEnterPressed: addThing("asdf")
     }
 
     ScrollView {
