@@ -1,6 +1,9 @@
 # QML App viewer class
 # Based on Qt Creator -created QmlApplicationViewer C++ class
 # Licensed under the LGPL
+from PySide import QtGui, QtCore, QtDeclarative
+from enum import Enum
+
 class QmlApplicationViewer(QtDeclarative.QDeclarativeView):
     Orientation = Enum('LockPortrait', 'LockLandscape', 'Auto')
 

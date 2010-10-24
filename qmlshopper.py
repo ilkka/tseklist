@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 import sys, os
 from PySide import QtGui, QtCore, QtDeclarative
-from lib.enum import Enum
 from lib.viewer import QmlApplicationViewer
 
 if __name__ == "__main__":
