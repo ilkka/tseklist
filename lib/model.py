@@ -12,9 +12,9 @@ class WantedListModel(QtCore.QAbstractListModel):
     
     def data(self, index, role=QtCore.Qt.DisplayRole):
         if role == QtCore.Qt.DisplayRole:
-            return QtCore.QVariant(self._things[index.row])
+            return self._things[index.row()]
         elif role == QtCore.Qt.BackgroundRole:
-            return QVariant()
+            return None
     
     @QtCore.Slot()
     def addThing(self, thing):
@@ -23,3 +23,18 @@ class WantedListModel(QtCore.QAbstractListModel):
         self._things.append(thing)
         self.endInsertRows()
 
+if __name__=="__main__":
+    import unittest
+    class WantedListModelTest(unittest.TestCase):
+        def testAddThing(self):
+            model = WantedListModel()
+            self.assertEqual(0, model.rowCount())
+            model.addThing("foobar")
+            self.assertEqual(1, model.rowCount())
+
+        def testData(self):
+            model = WantedListModel()
+            model.addThing("bar baz")
+            self.assertEqual("bar baz", model.data(model.index(0, 0)))
+
+    unittest.main()
