@@ -77,8 +77,14 @@ class QmlApplicationViewer(QtDeclarative.QDeclarativeView):
 
     @classmethod
     def _adjustPath(cls, path):
-        if not QtCore.QDir.isAbsolutePath(path):
-            return os.path.join(QtCore.QCoreApplication.applicationDirPath(), "/../Resources/", path)
+        pathInShareDir = os.path.join(
+            QtCore.QCoreApplication.applicationDirPath(),
+            "/../share/",
+            QtCore.QFileInfo(QtCore.QCoreApplication.applicationFilePath()).fileName(),
+            path)
+        if QtCore.QFileInfo(pathInShareDir).exists():
+            return pathInShareDir
+        return path
 
 if __name__ == "__main__":
     app = QtGui.QApplication(sys.argv)
