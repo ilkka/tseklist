@@ -1,3 +1,4 @@
 \.pyc$
-\.swp$
+\.sw[po]$
 \..+\.user$
+/.+-build-.+/
