@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-import sys
+import sys, oa
 from PySide import QtGui, QtCore, QtDeclarative
 
 # Enums are copyright 2005 Zoran Isailovski
@@ -66,13 +66,17 @@ class QmlApplicationViewer(QtDeclarative.QDeclarativeView):
         self.mainQmlFile = ""
 
     def setMainQmlFile(self, filename):
-        self.main
+        self.mainQmlFile = QmlApplicationViewer._adjustPath(filename)
 
     def addImportPath(self,  path):
         pass
 
     def setOrientation(self, orientation):
         pass
+
+    def _adjustPath(path):
+        if not QtCore.QDir.isAbsolutePath(path):
+            return os.path.join(QtCore.QCoreApplication.applicationDirPath(), "/../Resources/", path)
 
 if __name__ == "__main__":
     app = QtGui.QApplication(sys.argv)
