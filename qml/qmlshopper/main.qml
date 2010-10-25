@@ -17,17 +17,14 @@ Window {
         onEnterPressed: addThing("asdf")
     }
 
-    ScrollView {
+    ListView {
         id: items
         anchors.top: wanted_entry.bottom
         anchors.bottom: parent.bottom
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.margins:  10
-        ListView {
-                 anchors.fill: parent
-                 model: wantedlist
-                 delegate: Text { text: display }
-        }
+        model: wantedlist
+        delegate: Component { Text { text: display } }
     }
 }
