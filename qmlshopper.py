@@ -15,7 +15,7 @@ if __name__ == "__main__":
 
     root = view.rootObject()
     QtCore.QObject.connect(root, QtCore.SIGNAL('addThing(QString)'),
-                           model, QtCore.SLOT('addThing(QString)'))
+                           model.addThing)
 
     view.show()
     sys.exit(app.exec_())
