@@ -1,5 +1,8 @@
 # Wanted list model for shopping list app
 from PySide import QtCore
+import logging
+
+logger = logging.getLogger("model")
 
 class WantedListModel(QtCore.QAbstractListModel):
     def __init__(self, parent=None):
@@ -11,10 +14,13 @@ class WantedListModel(QtCore.QAbstractListModel):
             return len(self._things)
     
     def data(self, index, role=QtCore.Qt.DisplayRole):
-        if role == QtCore.Qt.DisplayRole:
-            return self._things[index.row()]
-        elif role == QtCore.Qt.BackgroundRole:
-            return None
+        if index.isValid():
+            if role == QtCore.Qt.DisplayRole:
+                logger.debug("Display data requested for row %d" % index.row())
+                return self._things[index.row()]
+        else:
+            logger.debug("Invalid index: %s" % index)
+        return None
     
     @QtCore.Slot(str)
     def addThing(self, thing):
