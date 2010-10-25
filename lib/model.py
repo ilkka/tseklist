@@ -30,6 +30,7 @@ class WantedListModel(QtCore.QAbstractListModel):
         self.endInsertRows()
 
 if __name__=="__main__":
+    logging.basicConfig(level=logging.DEBUG)
     import unittest
     class WantedListModelTest(unittest.TestCase):
         def testAddThing(self):
