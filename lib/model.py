@@ -24,7 +24,7 @@ class WantedListModel(QtCore.QAbstractListModel):
     
     @QtCore.Slot(str)
     def addThing(self, thing):
-        print("Add thing: %s" % (thing))
+        logger.debug("addThing: %s" % thing)
         self.beginInsertRows(QtCore.QModelIndex(), len(self._things), len(self._things))
         self._things.append(thing)
         self.endInsertRows()
