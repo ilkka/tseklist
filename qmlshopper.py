@@ -1,8 +1,10 @@
 #!/usr/bin/env python
-import sys, os
+import sys, os, logging
 from PySide import QtGui, QtCore, QtDeclarative
 from lib.viewer import QmlApplicationViewer
 from lib.model import WantedListModel
+
+logging.basicConfig(level=logging.DEBUG)
 
 if __name__ == "__main__":
     app = QtGui.QApplication(sys.argv)
