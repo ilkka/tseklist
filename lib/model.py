@@ -16,7 +16,7 @@ class WantedListModel(QtCore.QAbstractListModel):
         elif role == QtCore.Qt.BackgroundRole:
             return None
     
-    @QtCore.Slot()
+    @QtCore.Slot(str)
     def addThing(self, thing):
         print("Add thing: %s" % (thing))
         self.beginInsertRows(QtCore.QModelIndex(), len(self._things), len(self._things))
