@@ -27,7 +27,7 @@ Window {
         ListView {
                  anchors.fill: parent
                  model: wantedlist
-                 delegate: Text { text: "Foo " + index }
+                 delegate: Text { text: display }
         }
     }
 }
