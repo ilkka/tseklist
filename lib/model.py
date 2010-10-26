@@ -11,9 +11,8 @@ class WantedListModel(QtCore.QAbstractListModel):
 
     def rowCount(self, parent=QtCore.QModelIndex()):
         logger.debug("rowCount() called")
-        if not parent.isValid():
-            logger.debug("Have %d rows" % len(self._things))
-            return len(self._things)
+        logger.debug("Have %d rows" % len(self._things))
+        return len(self._things)
     
     def data(self, index, role=QtCore.Qt.DisplayRole):
         if index.isValid():
