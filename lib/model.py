@@ -80,4 +80,17 @@ if __name__=="__main__":
             model.addThing("bar baz")
             self.assertEqual("bar baz", model.data(model.index(0, 0)))
 
+    class WantedListItemTest(unittest.TestCase):
+        def testSetTitle(self):
+            i = WantedListItem("asdf")
+            self.assertEqual("asdf", i.get_title())
+            i.set_title("qwer")
+            self.assertEqual("qwer", i.get_title())
+
+        def testSetStatus(self):
+            i = WantedListItem("zxcv")
+            self.assertEqual(False, i.get_status())
+            i.set_status(True)
+            self.assertEqual(True, i.get_status())
+
     unittest.main()
