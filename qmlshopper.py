@@ -13,7 +13,7 @@ if __name__ == "__main__":
     app = QtGui.QApplication(sys.argv)
     view = QmlApplicationViewer()
 
-    items = [WantedListItem('This'), WantedListItem('That'), WantedListITem('Whatnot')]
+    items = [WantedListItem('This'), WantedListItem('That'), WantedListItem('Whatnot')]
     view.rootContext().setContextProperty("wantedlist", items)
 
     view.setMainQmlFile('qml/qmlshopper/main.qml')
