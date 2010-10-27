@@ -4,6 +4,35 @@ import logging
 
 logger = logging.getLogger("model")
 
+class WantedListItem(QtCore.QObject):
+    statusChanged = QtCore.Signal()
+    titleChanged = QtCore.Signal()
+
+    def __init__(self, title, parent=None):
+        super(WantedListItem, self).__init__(parent)
+        self._title = title
+        self._status = False
+
+    def get_title(self):
+        return self._title
+
+    def set_title(self, title):
+        if self._title != title:
+            self._title = title
+            self.titleChanged.emit()
+
+    title = QtCore.Property(str, fget=get_title, fset=set_title, notify=titleChanged)
+
+    def get_status(self):
+        return self._status
+
+    def set_status(self, status):
+        if self._status != status:
+            self._status = status
+            self.statusChanged.emit()
+
+    status = QtCore.Property(bool, fget=get_status, fset=set_status, notify=statusChanged)
+
 class WantedListModel(QtCore.QAbstractListModel):
     """Wanted List Model
 
