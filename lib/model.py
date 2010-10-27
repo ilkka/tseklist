@@ -5,6 +5,12 @@ import logging
 logger = logging.getLogger("model")
 
 class WantedListModel(QtCore.QAbstractListModel):
+    """Wanted List Model
+
+    This is a model class that inherits QAbstractListModel.
+    It unfortunately does not work in a QML ListView right now.
+    See http://stackoverflow.com/questions/4013615/how-to-provide-data-from-pyside-qabstractitemmodel-subclass-to-qml-listview
+    """
     def __init__(self, parent=None):
         QtCore.QAbstractListModel.__init__(self, parent)
         self._things = []
