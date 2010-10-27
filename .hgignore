@@ -4,3 +4,4 @@
 /.+-build-.+/
 chef-cookbooks
 \.orig$
+^\.vagrant$
