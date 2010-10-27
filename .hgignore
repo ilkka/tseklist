@@ -2,3 +2,5 @@
 \.sw[po]$
 \..+\.user$
 /.+-build-.+/
+chef-cookbooks
+\.orig$
