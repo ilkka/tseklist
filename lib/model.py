@@ -21,7 +21,7 @@ class WantedListItem(QtCore.QObject):
             self._title = title
             self.titleChanged.emit()
 
-    title = QtCore.QProperty(str, get_title, set_title, titleChanged)
+    title = QtCore.Property(str, get_title, set_title, titleChanged)
 
     def get_status(self):
         return self._status
@@ -31,7 +31,7 @@ class WantedListItem(QtCore.QObject):
             self._status = status
             self.statusChanged.emit()
 
-    status = QtCore.QProperty(bool, get_status, set_status, statusChanged)
+    status = QtCore.Property(bool, get_status, set_status, statusChanged)
 
 class WantedListModel(QtCore.QAbstractListModel):
     """Wanted List Model
