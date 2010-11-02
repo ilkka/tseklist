@@ -10,7 +10,7 @@ CONFIG   -= app_bundle
 SOURCES += common/testrunner.cpp
 DEFINES += SRCDIR=\\\"$$PWD/\\\"
 
-INCLUDEPATH += -I../lib -I. -I..
+INCLUDEPATH += ../lib . ..
 HEADERS += common/AutoTest.h
 
 include(wantedlistmodel/test_wantedlistmodel.pri)
