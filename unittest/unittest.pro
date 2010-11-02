@@ -14,3 +14,4 @@ INCLUDEPATH += -I../lib
 HEADERS += common/AutoTest.h
 
 include(wantedlistmodel/test_wantedlistmodel.pri)
+include(wantedlistitem/test_wantedlistitem.pri)
