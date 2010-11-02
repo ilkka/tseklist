@@ -1,2 +1,3 @@
 TEMPLATE = subdirs
-SUBDIRS = unittest app.pro
+SUBDIRS = app.pro unittest
+CONFIG += ordered
