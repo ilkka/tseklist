@@ -93,4 +93,9 @@ if __name__=="__main__":
             i.set_status(True)
             self.assertEqual(True, i.get_status())
 
+        def testHasNamedProperties(self):
+            i = WantedListItem("plapla")
+            self.assertEqual("plapla", i.property("title"))
+            self.assertEqual(False, i.property("status"))
+
     unittest.main()
