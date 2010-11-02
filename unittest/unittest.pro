@@ -3,7 +3,7 @@ TEMPLATE = app
 QT       += testlib
 QT       -= gui
 
-TARGET = tst_wantedlistmodeltest
+TARGET = unittests
 CONFIG   += console
 CONFIG   -= app_bundle
 
