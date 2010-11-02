@@ -40,6 +40,6 @@ void WantedListModelTest::rowCount_data()
     QTest::newRow("0") << QString();
 }
 
-QTEST_MAIN(WantedListModelTest);
+DECLARE_TEST(WantedListModelTest);
 
 #include "tst_wantedlistmodeltest.moc"
