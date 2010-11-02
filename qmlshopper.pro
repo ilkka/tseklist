@@ -29,3 +29,6 @@ qtcAddDeployment()
 
 HEADERS += \
     lib/wantedlistmodel.h
+
+OTHER_FILES += \
+    unittest/unittest.pri
