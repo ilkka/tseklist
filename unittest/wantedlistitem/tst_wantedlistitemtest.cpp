@@ -21,9 +21,9 @@ void WantedListItemTest::testSetTitle()
 {
     WantedListItem* i = new WantedListItem(this);
     i->set_title("moro");
-    QCOMPARE("moro", i->get_title());
+    QCOMPARE(QString("moro"), i->get_title());
     i->set_title("tere");
-    QCOMPARE("tere", i->get_title());
+    QCOMPARE(QString("tere"), i->get_title());
 }
 
 void WantedListItemTest::testSetStatus()
