@@ -19,7 +19,7 @@ WantedListItemTest::WantedListItemTest()
 
 void WantedListItemTest::testSetTitle()
 {
-    i = WantedListItem();
+    WantedListItem i = WantedListItem();
     i.set_title("moro");
     QCOMPARE("moro", i.get_title());
     i.set_title("tere");
@@ -28,7 +28,7 @@ void WantedListItemTest::testSetTitle()
 
 void WantedListItemTest::testSetStatus()
 {
-    i = WantedListItem();
+    WantedListItem i = WantedListItem();
     i.set_status(0);
     QCOMPARE(0, i.get_status());
     i.set_status(1);
