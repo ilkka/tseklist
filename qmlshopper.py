@@ -6,14 +6,16 @@ from lib.model import WantedListItem
 
 logging.basicConfig(level=logging.DEBUG)
 
+items = []
+
 def addThing(thing):
-    logging.debug("Would add thing \"%s\"" % thing)
+    logging.debug("Add thing \"%s\"" % thing)
+    items.append(WantedListItem(thing))
 
 if __name__ == "__main__":
     app = QtGui.QApplication(sys.argv)
     view = QmlApplicationViewer()
 
-    items = [WantedListItem('This'), WantedListItem('That'), WantedListItem('Whatnot')]
     view.rootContext().setContextProperty("wantedlist", items)
 
     view.setMainQmlFile('qml/qmlshopper/main.qml')
