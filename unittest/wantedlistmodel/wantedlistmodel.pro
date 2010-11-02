@@ -15,7 +15,8 @@ CONFIG   -= app_bundle
 TEMPLATE = app
 
 
-SOURCES += tst_wantedlistmodeltest.cpp
+SOURCES += tst_wantedlistmodeltest.cpp \
+    ../common/testrunner.cpp
 DEFINES += SRCDIR=\\\"$$PWD/\\\"
 
 INCLUDEPATH += -I../../lib
