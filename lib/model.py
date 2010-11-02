@@ -5,6 +5,8 @@ import logging
 logger = logging.getLogger("model")
 
 class WantedListItem(QtCore.QObject):
+    """Class representing a single item of the wanted item list."""
+
     statusChanged = QtCore.Signal()
     titleChanged = QtCore.Signal()
 
