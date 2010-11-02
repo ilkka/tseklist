@@ -9,7 +9,7 @@ class WantedListItem : public QObject
     Q_PROPERTY(QString title READ get_title WRITE set_title NOTIFY titleChanged)
     Q_PROPERTY(int status READ get_status WRITE set_status NOTIFY statusChanged)
 public:
-    explicit WantedListItem(QObject *parent = 0);
+    explicit WantedListItem(const QString& title, QObject *parent = 0);
 
     QString get_title() const {
         return m_title;

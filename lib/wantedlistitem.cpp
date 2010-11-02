@@ -1,6 +1,6 @@
 #include "wantedlistitem.h"
 
-WantedListItem::WantedListItem(QObject *parent) :
-    QObject(parent), m_title(""), m_status(0)
+WantedListItem::WantedListItem(const QString& title, QObject *parent) :
+    QObject(parent), m_title(title), m_status(0)
 {
 }

@@ -9,8 +9,8 @@ int main(int argc, char *argv[])
     QApplication app(argc, argv);
 
     QObjectList o;
-    o.append(new WantedListItem());
-    o.append(new WantedListItem());
+    o.append(new WantedListItem("eka"));
+    o.append(new WantedListItem("toka"));
 
     QmlApplicationViewer viewer;
 
