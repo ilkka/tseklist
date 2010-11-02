@@ -5,3 +5,4 @@
 chef-cookbooks
 \.orig$
 ^\.vagrant$
+\.pyo$
