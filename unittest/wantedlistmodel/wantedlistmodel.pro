@@ -20,3 +20,4 @@ DEFINES += SRCDIR=\\\"$$PWD/\\\"
 
 INCLUDEPATH += -I../../lib
 SOURCES += ../../lib/wantedlistmodel.cpp
+HEADERS += ../common/AutoTest.h
