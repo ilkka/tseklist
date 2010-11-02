@@ -19,6 +19,8 @@ symbian:TARGET.UID3 = 0xE50FD061
 #DEFINES += QMLJSDEBUGGER
 #DEFINES += QMLOBSERVER
 
+SUBDIRS += unittest
+
 # The .cpp file which was generated for your project. Feel free to hack it.
 SOURCES += main.cpp \
     lib/wantedlistmodel.cpp
@@ -29,6 +31,3 @@ qtcAddDeployment()
 
 HEADERS += \
     lib/wantedlistmodel.h
-
-OTHER_FILES += \
-    unittest/unittest.pri
