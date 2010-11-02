@@ -29,4 +29,4 @@ void WantedListItemTest::testSetStatus()
 DECLARE_TEST(WantedListItemTest)
 
 #include "tst_wantedlistitemtest.moc"
-#include "../../moc_wantedlistitem.cpp"
+#include "../moc_wantedlistitem.cpp"

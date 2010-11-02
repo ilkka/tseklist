@@ -44,4 +44,4 @@ void WantedListModelTest::rowCount_data()
 DECLARE_TEST(WantedListModelTest);
 
 #include "tst_wantedlistmodeltest.moc"
-#include "../../moc_wantedlistmodel.cpp"
+#include "../moc_wantedlistmodel.cpp"
