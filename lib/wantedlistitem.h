@@ -15,7 +15,7 @@ public:
         return m_title;
     }
     int get_status() const {
-        return m_status();
+        return m_status;
     }
 
 signals:
