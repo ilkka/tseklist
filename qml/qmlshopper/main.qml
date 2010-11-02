@@ -14,7 +14,10 @@ Window {
         y: mainwindow.headerBottom + 10
         anchors.left: parent.left; anchors.right: parent.right
         anchors.margins: 10
-        onEnterPressed: addThing(text)
+        onEnterPressed: {
+                        addThing(text)
+                        text = ""
+                        }
     }
 
     ListView {
