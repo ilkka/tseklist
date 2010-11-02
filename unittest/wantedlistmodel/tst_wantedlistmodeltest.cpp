@@ -1,6 +1,7 @@
 #include <QtCore/QString>
 #include <QtTest/QtTest>
 #include <QtCore/QCoreApplication>
+#include "../common/AutoTest.h"
 
 class WantedListModelTest : public QObject
 {
@@ -43,3 +44,4 @@ void WantedListModelTest::rowCount_data()
 DECLARE_TEST(WantedListModelTest);
 
 #include "tst_wantedlistmodeltest.moc"
+#include "../../moc_wantedlistmodel.cpp"
