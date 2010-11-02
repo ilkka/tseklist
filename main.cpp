@@ -8,13 +8,13 @@ int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
 
-    QObjectList* o = new QObjectList();
-    o->append(new WantedListItem());
-    o->append(new WantedListItem());
+    QObjectList o;
+    o.append(new WantedListItem());
+    o.append(new WantedListItem());
 
     QmlApplicationViewer viewer;
 
-    viewer.rootContext()->setContextProperty("wantedlist", o);
+    viewer.rootContext()->setContextProperty("wantedlist", QVariant::fromValue(o));
 
     viewer.setOrientation(QmlApplicationViewer::Auto);
     viewer.setMainQmlFile(QLatin1String("qml/qmlshopper/main.qml"));
