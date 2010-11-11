@@ -48,13 +48,13 @@ class WantedListModel(QtCore.QAbstractListModel):
 
     def rowCount(self, parent=QtCore.QModelIndex()):
         logger.debug("rowCount() called")
-        logger.debug("Have %d rows" % len(self._things))
+        logger.debug("Have {0} rows".format(len(self._things)))
         return len(self._things)
     
     def data(self, index, role=QtCore.Qt.DisplayRole):
         if index.isValid():
             if role == QtCore.Qt.DisplayRole:
-                logger.debug("Display data requested for row %d" % index.row())
+                logger.debug("Display data requested for row {0}".format(index.row()))
                 return self._things[index.row()]
         else:
             logger.debug("Invalid index: %s" % index)
@@ -62,7 +62,7 @@ class WantedListModel(QtCore.QAbstractListModel):
     
     @QtCore.Slot(str)
     def addThing(self, thing):
-        logger.debug("addThing: %s" % thing)
+        logger.debug("addThing: {0}".format(thing))
         self.beginInsertRows(QtCore.QModelIndex(), len(self._things), len(self._things))
         self._things.append(thing)
         self.endInsertRows()
