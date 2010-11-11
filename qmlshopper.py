@@ -13,7 +13,7 @@ if __name__ == "__main__":
     items = []
 
     def addThing(thing):
-        logging.debug("Add thing \"%s\"" % thing)
+        logging.debug("Add thing \"{0}\"".format(thing))
         items.append(WantedListItem(thing))
         view.rootContext().setContextProperty("wantedlist", items)
 
