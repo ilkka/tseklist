@@ -2,25 +2,22 @@
 import sys, os, logging
 from PySide import QtGui, QtCore, QtDeclarative
 from lib.viewer import QmlApplicationViewer
-from lib.model import WantedListItem
+from lib.model import WantedListItem, WantedListModel
 
 logging.basicConfig(level=logging.DEBUG)
-
-def addThing(thing):
-    logging.debug("Would add thing \"%s\"" % thing)
 
 if __name__ == "__main__":
     app = QtGui.QApplication(sys.argv)
     view = QmlApplicationViewer()
 
-    items = [WantedListItem('This'), WantedListItem('That'), WantedListItem('Whatnot')]
+    items = WantedListModel()
     view.rootContext().setContextProperty("wantedlist", items)
 
     view.setMainQmlFile('qml/qmlshopper/main.qml')
 
     root = view.rootObject()
     QtCore.QObject.connect(root, QtCore.SIGNAL('addThing(QString)'),
-                           addThing)
+                           items.addThing)
 
     view.show()
     sys.exit(app.exec_())

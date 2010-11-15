@@ -25,6 +25,6 @@ Window {
         anchors.right: parent.right
         anchors.margins:  10
         model: wantedlist
-        delegate: Component { Text { text: title } }
+        delegate: Component { Text { text: display } }
     }
 }
