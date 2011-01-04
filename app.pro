@@ -1,5 +1,5 @@
 # Add more folders to ship with the application, here
-folder_01.source = qml/qmlshopper
+folder_01.source = qml/tseklist
 folder_01.target = qml
 DEPLOYMENTFOLDERS = folder_01
 

@@ -13,7 +13,7 @@ if __name__ == "__main__":
     items = WantedListModel()
     view.rootContext().setContextProperty("wantedlist", items)
 
-    view.setMainQmlFile('qml/qmlshopper/main.qml')
+    view.setMainQmlFile('qml/tseklist/main.qml')
 
     root = view.rootObject()
     QtCore.QObject.connect(root, QtCore.SIGNAL('addThing(QString)'),
