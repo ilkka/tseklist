@@ -3,6 +3,8 @@ folder_01.source = qml/tseklist
 folder_01.target = qml
 DEPLOYMENTFOLDERS = folder_01
 
+TARGET = tseklist
+
 # Additional import path used to resolve Qml modules in Creator's code model
 QML_IMPORT_PATH = /usr/lib/qt4/imports
 
