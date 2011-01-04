@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 
     viewer.rootContext()->setContextProperty("wantedlist", QVariant::fromValue(o));
 
-    viewer.setOrientation(QmlApplicationViewer::Auto);
+    viewer.setOrientation(QmlApplicationViewer::ScreenOrientationAuto);
     viewer.setMainQmlFile(QLatin1String("qml/tseklist/main.qml"));
     viewer.show();
 
